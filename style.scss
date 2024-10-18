@@ -1,0 +1,89 @@
+body {
+  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  line-height: 1.6;
+  .tab-container {
+    max-width: 700px;
+    margin: 0 auto;
+    .tab-list {
+      position: relative;
+      list-style: none;
+      display: flex;
+      margin: 0 0;
+      padding: 0 0;
+
+      .tab-item {
+        position: relative;
+        display: flex;
+        flex: 1;
+        text-align: center;
+        align-items: center;
+        font-size: 1.6rem;
+        color: #c2336a;
+        background-color: #fff;
+        padding: 15px 20px;
+        cursor: pointer;
+
+        &.is-active, &:hover {
+          background-color: #fef7fa;
+
+          p {
+            color: #000;
+          }
+        }
+
+        &:hover {
+          &::after {
+            opacity: 1;
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 6px;
+          background-color: #fadbe6;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          opacity: 0;
+          transition: all 0.2s ease-in-out;
+        }
+
+        i {
+          margin-right: 10px;
+        }
+
+        p {
+          margin: 0 0;
+          font-size: 1.4rem;
+        }
+      }
+
+      .line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 6px;
+        border-radius: 6px;
+        background-color: #bf2563;
+        width: 0;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    .tab-content {
+      .tab-pane {
+        display: none;
+        transition: all 0.2s ease-in-out;
+
+        &.is-active {
+          display: block;
+        }
+      }
+    }
+  }
+}
